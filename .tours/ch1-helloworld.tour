@@ -1,0 +1,16 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "ch1-helloworld",
+  "steps": [
+    {
+      "file": "ch1/helloworld/main.go",
+      "description": "Package main defines a standalone executable program as opposed to a library.",
+      "pattern": "^[^\\S\\n]*package main"
+    },
+    {
+      "file": "ch1/helloworld/main.go",
+      "description": "Function main is where program execution begins.",
+      "pattern": "^[^\\S\\n]*func main\\(\\) \\{"
+    }
+  ]
+}
