@@ -1,0 +1,31 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "ch1-echo1",
+  "steps": [
+    {
+      "file": "ch1/echo1/main.go",
+      "description": "A comment immediately precedes the main package declaration to describe the program as a whole in one or more complete sentences.",
+      "pattern": "^[^\\S\\n]*// Echo1 prints its command-line arguments\\."
+    },
+    {
+      "file": "ch1/echo1/main.go",
+      "description": "Import as a parenthesized list as opposed to individual import declarations.",
+      "pattern": "^[^\\S\\n]*import \\("
+    },
+    {
+      "file": "ch1/echo1/main.go",
+      "description": "If not explicitly initialized, variables are implicitly initialized to the zero value for its type.",
+      "pattern": "^[^\\S\\n]*var s, sep string"
+    },
+    {
+      "file": "ch1/echo1/main.go",
+      "description": "os.Args\n- A variable that makes command-line arguments available to a program.\n- A slice of strings.\n  - The first element of os.Args, os.Args[0] is the name of the command itself.\n  - The other elements are the arguments provided to the program when it started execution.\n\nThe := symbol is part of a short variable declaration statement that declares one or more variables and gives them appropriate types based on the initializer values.\n\nThe increment statement i++ has a corresponding decrement statement i--. \\\nBeing statements, not expressions as they are in most languages in the C family, they cannot be used in assignment statements like j = i++. \\\nAlso, they are postfix only, so ++i is illegal.",
+      "pattern": "^[^\\S\\n]*for i := 1; i < len\\(os\\.Args\\); i\\+\\+ \\{"
+    },
+    {
+      "file": "ch1/echo1/main.go",
+      "description": "When applied to strings, the + operator concatenates the values.\n\nThe operator += is an assignment operator that concatenates the old value of s with sep and os.Args[i] and assigns it back to s.",
+      "pattern": "^[^\\S\\n]*s \\+= sep \\+ os\\.Args\\[i\\]"
+    }
+  ]
+}
