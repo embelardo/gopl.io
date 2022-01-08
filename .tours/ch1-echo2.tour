@@ -1,0 +1,18 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "ch1-echo2",
+  "steps": [
+    {
+      "file": "ch1/echo2/main.go",
+      "description": "Short variable declaration\n- Allows one to declare and initialize multiple variables on the same line.\n- Only for variables within a function; not at package-level.",
+      "pattern": "^[^\\S\\n]*s, sep := \"\", \"\"",
+      "title": "Declare-initialize many variables"
+    },
+    {
+      "file": "ch1/echo2/main.go",
+      "description": "- On each iteration, range produces value pair: index and value of element at index.\n- Index not needed in this case, so assigned to blank identifier _ to tell Go.\n- Use blank identifier in cases where syntax requires variable name but program logic does not.\n",
+      "pattern": "^[^\\S\\n]*for _, arg := range os\\.Args\\[1:\\] \\{",
+      "title": "for loop with range"
+    }
+  ]
+}
