@@ -1,0 +1,18 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "ch1-dup3",
+  "steps": [
+    {
+      "file": "ch1/dup3/main.go",
+      "description": "ioutil.ReadFile\n- Reads entire contents of file instead of 'streaming' it.\n- Returns slice of type byte that must be converted into string so that strings.Split can split it.",
+      "pattern": "^[^\\S\\n]*data, err := ioutil\\.ReadFile\\(filename\\)",
+      "title": "ioutil.ReadFile"
+    },
+    {
+      "file": "ch1/dup3/main.go",
+      "description": "strings.Split\n- Splits string into slice of substrings.\n- Opposite of strings.Join.",
+      "pattern": "^[^\\S\\n]*for _, line := range strings\\.Split\\(string\\(data\\), \"\\\\n\"\\) \\{",
+      "title": "strings.Split"
+    }
+  ]
+}

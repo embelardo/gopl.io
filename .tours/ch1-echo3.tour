@@ -1,0 +1,12 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "ch1-echo3",
+  "steps": [
+    {
+      "file": "ch1/echo3/main.go",
+      "description": "- echo2's loop can be expensive due to creation of multiple string values.\n- echo3 avoids this overhead via strings.Join function.",
+      "pattern": "^[^\\S\\n]*fmt\\.Println\\(strings\\.Join\\(os\\.Args\\[1:\\], \" \"\\)\\)",
+      "title": "strings.Join"
+    }
+  ]
+}

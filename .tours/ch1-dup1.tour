@@ -1,0 +1,58 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "ch1-dup1",
+  "steps": [
+    {
+      "file": "ch1/testdata/duplicates.txt",
+      "description": "File with duplicate entries.",
+      "pattern": "^[^\\S\\n]*aaa",
+      "title": "duplicates.txt"
+    },
+    {
+      "file": "ch1/dup1/main.go",
+      "description": "Map\n- Holds a set of key/value pairs.\n- Provides constant-time operations to store, retrieve, or test for an item in the set.\n- Key may be of any type whose value can be compared with ==.\n- Value may be any type at all.\n- In this case, the map has keys of type string and values of type int.",
+      "pattern": "^[^\\S\\n]*counts := make\\(map\\[string\\]int\\)",
+      "selection": {
+        "start": {
+          "line": 18,
+          "character": 1
+        },
+        "end": {
+          "line": 19,
+          "character": 1
+        }
+      },
+      "title": "Declare a map"
+    },
+    {
+      "file": "ch1/dup1/main.go",
+      "description": "- Use string from stdin as key in map.\n- Simply increment value of current string.\n  - Map adds key if it doesn't exist.\n  - Or increments value of key if it does.\n\nThis line is equivalent to:\n```go\nline := input.Text()\ncounts[line] = counts[line] + 1\n```",
+      "pattern": "^[^\\S\\n]*counts\\[input\\.Text\\(\\)\\]\\+\\+",
+      "title": "Count strings"
+    },
+    {
+      "file": "ch1/dup1/main.go",
+      "description": "Go over map elements.\n- Print element if its value > 1, meaning it has a duplicate.\n- Maps do not guarantee any order when iterating over their elements.",
+      "pattern": "^[^\\S\\n]*for line, n := range counts \\{",
+      "title": "Print duplicates"
+    },
+    {
+      "file": "ch1/dup1/main.go",
+      "description": "bufio package makes input and output efficient and convenient.",
+      "pattern": "^[^\\S\\n]*\"bufio\"",
+      "title": "bufio package"
+    },
+    {
+      "file": "ch1/dup1/main.go",
+      "description": "bufio.Scanner reads input and breaks it into lines or words.\n- Provides easy way to process input that comes naturally in lines.",
+      "pattern": "^[^\\S\\n]*input := bufio\\.NewScanner\\(os\\.Stdin\\)",
+      "title": "bufio.Scanner"
+    },
+    {
+      "file": "ch1/dup1/main.go",
+      "description": "Each call to input.Scan reads next line and removes newline character from end.\n- Result can be retrieved using input.Text",
+      "pattern": "^[^\\S\\n]*for input\\.Scan\\(\\) \\{",
+      "title": "input.Scan"
+    }
+  ]
+}

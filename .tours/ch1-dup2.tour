@@ -1,0 +1,34 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "ch1-dup2",
+  "steps": [
+    {
+      "file": "ch1/dup2/main.go",
+      "description": "os.Open returns two values\n- 1st: An open file (*os.File) passed to bufio.Scanner.\n- 2nd: Result of os.Open as a value of type error.",
+      "pattern": "^[^\\S\\n]*f, err := os\\.Open\\(arg\\)",
+      "title": "os.Open"
+    },
+    {
+      "file": "ch1/dup2/main.go",
+      "description": "Call to countLines precedes its declaration. Unlike in C, functions and other package-level entities may be declared in any order.",
+      "pattern": "^[^\\S\\n]*func countLines\\(f \\*os\\.File, counts map\\[string\\]int\\) \\{",
+      "title": "Declaration order"
+    },
+    {
+      "file": "ch1/dup2/main.go",
+      "description": "When map is passed to function, function receives copy of reference passed by caller. So any changes function makes to underlying data structure are also visible through caller's map reference.",
+      "pattern": "^[^\\S\\n]*counts\\[input\\.Text\\(\\)\\]\\+\\+",
+      "selection": {
+        "start": {
+          "line": 43,
+          "character": 1
+        },
+        "end": {
+          "line": 44,
+          "character": 1
+        }
+      },
+      "title": "Map reference"
+    }
+  ]
+}
